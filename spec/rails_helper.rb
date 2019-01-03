@@ -5,7 +5,6 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'support/factory_bot'
 require 'vcr'
 require 'webmock/rspec'
 require 'simplecov'
@@ -51,7 +50,8 @@ VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock, :faraday
   config.configure_rspec_metadata!
-  config.filter_sensitive_data("<api_key>") { ENV['NASA_API_KEY'] }
+  config.filter_sensitive_data("<bing_map_api_key>") { ENV['BING_MAP_API_KEY'] }
+  config.filter_sensitive_data("<dark_sky_api_key>") { ENV['DARK_SKY_API_KEY'] }
   config.allow_http_connections_when_no_cassette = true
 end
 
@@ -60,6 +60,7 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
 
 DatabaseCleaner.strategy = :truncation
 
