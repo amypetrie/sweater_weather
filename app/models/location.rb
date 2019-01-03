@@ -14,6 +14,10 @@ class Location
     @_bing_result ||= bing_service.get_location_result
   end
 
+  def coordinates
+    bing_location_result[:resourceSets].first[:resources].first[:point][:coordinates]
+  end
+
   def daily_weather
   end
 
