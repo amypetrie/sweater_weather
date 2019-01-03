@@ -1,4 +1,8 @@
 class UpcomingForecast
+  attr_reader :summary,
+              :humidity,
+              :temperature_high,
+              :temperature_low
 
   def initialize(data)
     @summary = data[:summary]

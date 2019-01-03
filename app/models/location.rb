@@ -34,11 +34,11 @@ class Location
   end
 
   def upcoming_weather
-    dark_sky_result[:daily][:data]first(8).each do |day|
+    dark_sky_result[:daily][:data].each do |day|
       new_upcoming_day = UpcomingForecast.new(day)
       @_upcoming_weather << new_upcoming_day
     end
-    @_upcoming_day
+    @_upcoming_weather
   end
 
   def coordinates

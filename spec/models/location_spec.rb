@@ -35,9 +35,9 @@ describe Location, type: :model do
     end
 
     it ".upcoming_weather" do
-      expect(@location.hourly_weather).to be_an Array
-      expect(@location.hourly_weather.first).to be_a HourlyForecast
-      expect(@location.hourly_weather.first.temperature).to eq 49.61
+      expect(@location.upcoming_weather).to be_an Array
+      expect(@location.upcoming_weather.first).to be_an UpcomingForecast
+      expect(@location.upcoming_weather.first.temperature_high).to eq 50.48
     end
   end
 end
