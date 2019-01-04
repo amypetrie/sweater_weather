@@ -18,13 +18,13 @@ describe "/api/v1/gifs?location=denver,co" do
     response_back = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
-binding.pry
-    expect(response_back).to have_key :data
+
+    expect(response_back).to have_key :daily_forecasts
     expect(response_back).to have_key :copyright
-    expect(response_back[:data].first).to have_key :attributes
-    expect(response_back[:data].first[:attributes]).to have_key :summary
-    expect(response_back[:data].first[:attributes][:summary]).to eq "Clear throughout the day."
-    expect(response_back[:data].first[:attributes]).to have_key :url
-    expect(response_back[:data].first[:attributes][:url]).to eq "https://media2.giphy.com/media/xUNd9W0kPQknKh6V56/200_s.gif"
+    expect(response_back[:daily_forecasts][:data].first).to have_key :attributes
+    expect(response_back[:daily_forecasts][:data].first[:attributes]).to have_key :summary
+    expect(response_back[:daily_forecasts][:data].first[:attributes][:summary]).to eq "Clear throughout the day."
+    expect(response_back[:daily_forecasts][:data].first[:attributes]).to have_key :url
+    expect(response_back[:daily_forecasts][:data].first[:attributes][:url]).to eq "https://media2.giphy.com/media/xUNd9W0kPQknKh6V56/200_s.gif"
   end
 end
