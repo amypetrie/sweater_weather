@@ -1,4 +1,7 @@
 class UpcomingForecastSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id, :time, :summary
+  attributes :time, :summary
+  attribute :url do |obj|
+    obj.weather_gif
+  end
 end
