@@ -16,7 +16,7 @@ class UpcomingForecast
   end
 
   def weather_gif
-    giphy_results[:data].first[:images][:fixed_height_still][:url]
+    giphy_results[:data][:images][:fixed_height_still][:url]
   end
 
   private
