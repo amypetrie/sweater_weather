@@ -3,9 +3,11 @@ class UpcomingForecast
               :humidity,
               :temperature_high,
               :temperature_low,
-              :time
+              :time,
+              :id
 
   def initialize(data)
+    @id = Time.now.to_i
     @summary = data[:summary]
     @humidity = data[:humidity]
     @temperature_high = data[:temperatureHigh]
