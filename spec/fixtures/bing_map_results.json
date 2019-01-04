@@ -1,0 +1,98 @@
+{
+    "authenticationResultCode": "ValidCredentials",
+    "brandLogoUri": "http://dev.virtualearth.net/Branding/logo_powered_by.png",
+    "copyright": "Copyright © 2019 Microsoft and its suppliers. All rights reserved. This API cannot be accessed and the content and any results may not be used, reproduced or transmitted in any manner without express written permission from Microsoft Corporation.",
+    "resourceSets": [
+        {
+            "estimatedTotal": 2,
+            "resources": [
+                {
+                    "__type": "Location:http://schemas.microsoft.com/search/local/ws/rest/v1",
+                    "bbox": [
+                        39.3947219848633,
+                        -105.713081359863,
+                        40.0874862670898,
+                        -104.255378723145
+                    ],
+                    "name": "Denver, CO",
+                    "point": {
+                        "type": "Point",
+                        "coordinates": [
+                            39.7400093078613,
+                            -104.99201965332
+                        ]
+                    },
+                    "address": {
+                        "adminDistrict": "CO",
+                        "adminDistrict2": "Denver County",
+                        "countryRegion": "United States",
+                        "formattedAddress": "Denver, CO",
+                        "locality": "Denver"
+                    },
+                    "confidence": "High",
+                    "entityType": "PopulatedPlace",
+                    "geocodePoints": [
+                        {
+                            "type": "Point",
+                            "coordinates": [
+                                39.7400093078613,
+                                -104.99201965332
+                            ],
+                            "calculationMethod": "Rooftop",
+                            "usageTypes": [
+                                "Display"
+                            ]
+                        }
+                    ],
+                    "matchCodes": [
+                        "Ambiguous"
+                    ]
+                },
+                {
+                    "__type": "Location:http://schemas.microsoft.com/search/local/ws/rest/v1",
+                    "bbox": [
+                        39.6142196655273,
+                        -105.109848022461,
+                        39.9141387939453,
+                        -104.617736816406
+                    ],
+                    "name": "Denver County",
+                    "point": {
+                        "type": "Point",
+                        "coordinates": [
+                            39.7627067565918,
+                            -104.873611450195
+                        ]
+                    },
+                    "address": {
+                        "adminDistrict": "CO",
+                        "adminDistrict2": "Denver County",
+                        "countryRegion": "United States",
+                        "formattedAddress": "Denver County"
+                    },
+                    "confidence": "Low",
+                    "entityType": "AdminDivision2",
+                    "geocodePoints": [
+                        {
+                            "type": "Point",
+                            "coordinates": [
+                                39.7627067565918,
+                                -104.873611450195
+                            ],
+                            "calculationMethod": "Rooftop",
+                            "usageTypes": [
+                                "Display"
+                            ]
+                        }
+                    ],
+                    "matchCodes": [
+                        "Ambiguous"
+                    ]
+                }
+            ]
+        }
+    ],
+    "statusCode": 200,
+    "statusDescription": "OK",
+    "traceId": "c8d442b2148c403da126e5c289fd09ad|CO3230EE0A|7.7.0.0|Ref A: F21573B3140B4683BDC303E1A2491EEE Ref B: CO1EDGE0111 Ref C: 2019-01-04T17:22:45Z"
+}

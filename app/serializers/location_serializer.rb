@@ -1,8 +1,8 @@
 class LocationSerializer
   include FastJsonapi::ObjectSerializer
   attributes :id
-  attribute :daily_weather do |obj|
-    obj.daily_weather
+  attribute :daily_forecast do |obj|
+    obj.daily_forecast
   end
   attribute :hourly_weather do |obj|
     obj.hourly_weather

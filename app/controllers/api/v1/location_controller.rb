@@ -1,6 +1,6 @@
 class Api::V1::LocationController < ActionController::API
 
-  def new
+  def index
     facade = LocationFacade.new(new_location: location_params)
     location = facade.create_location
 

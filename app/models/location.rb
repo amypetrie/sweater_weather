@@ -7,21 +7,22 @@ class Location
     @id = data[:id]
     @location_description = data[:location]
     @coordinates = data[:coordinates]
-    @_daily_weather = nil
+    @_daily_forecast = nil
     @_upcoming_weather = []
     @_hourly_weather = []
   end
 
   def load_all_weather
-    daily_weather
+    daily_forecast
     hourly_weather
     upcoming_weather
   end
-  def daily_weather
+  
+  def daily_forecast
     current_details = dark_sky_results[:currently]
     day_details = dark_sky_results[:daily][:data].first
 
-    @_daily_weather = DailyForecast.new(current_details, day_details)
+    @_daily_forecast = DailyForecast.new(current_details, day_details)
   end
 
   def hourly_weather

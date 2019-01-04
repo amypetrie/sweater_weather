@@ -4,7 +4,7 @@
         "type": "location",
         "attributes": {
             "id": "Z25:42:10T40-10-9102",
-            "daily_weather": {
+            "daily_forecast": {
                 "daily_summary": "Clear throughout the day.",
                 "current_summary": "Clear",
                 "current_temp": 43.95,
