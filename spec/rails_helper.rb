@@ -55,6 +55,7 @@ VCR.configure do |config|
   config.configure_rspec_metadata!
   config.filter_sensitive_data("<bing_map_api_key>") { ENV['BING_MAP_API_KEY'] }
   config.filter_sensitive_data("<dark_sky_api_key>") { ENV['DARK_SKY_API_KEY'] }
+  config.filter_sensitive_data("<giphy_api_key>") { ENV['GIPHY_API_KEY'] }
   config.allow_http_connections_when_no_cassette = true
 end
 
