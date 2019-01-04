@@ -26,7 +26,7 @@ class UpcomingForecast
     end
 
     def giphy_results
-      @results ||= service.get_weather_gif
+      @service_result ||= service.get_weather_gif
     end
 
 end
