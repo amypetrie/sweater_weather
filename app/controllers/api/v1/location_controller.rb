@@ -1,4 +1,4 @@
-class Api::V1::LocationController < ApplicationController
+class Api::V1::LocationController < ActionController::API
 
   def new
     facade = LocationFacade.new(new_location: location_params)
