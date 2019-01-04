@@ -18,7 +18,7 @@ describe "/api/v1/gifs?location=denver,co" do
     response_back = JSON.parse(response.body, symbolize_names: true)
 
     expect(response).to be_successful
-
+binding.pry
     expect(response_back).to have_key :data
     expect(response_back).to have_key :copyright
     expect(response_back[:data].first).to have_key :attributes
