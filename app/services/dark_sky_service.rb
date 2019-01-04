@@ -15,7 +15,7 @@ class DarkSkyService
 
   def get_weather_forcast
     id = ENV['DARK_SKY_API_KEY']
-  
+
     get_json("/forecast/#{id}/#{latitude},#{longitude}")
   end
 

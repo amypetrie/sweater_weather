@@ -3,7 +3,7 @@ require "rails_helper"
 describe "Bing Map API Service" do
   it "returns coordinates for a queried text location" do
     VCR.use_cassette("bing_map_location_request") do
-      filter = {location: "denver,co"}
+      filter = {requested_location: "denver,co"}
       service = BingMapService.new(filter)
 
       results = service.get_location_result

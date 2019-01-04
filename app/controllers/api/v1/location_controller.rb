@@ -1,10 +1,10 @@
 class Api::V1::LocationController < ApplicationController
 
   def new
-    location = Location.new(location_params)
-    # weather = location.current_weather
+    facade = LocationFacade.new(new_location: location_params)
+    location = facade.create_location
 
-    # render json: LocationSerializer.new(location)
+    render json: LocationSerializer.new(location)
   end
 
   private

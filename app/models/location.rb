@@ -1,32 +1,31 @@
 class Location
-  attr_reader :location_id
+  attr_reader :id,
+              :location_description,
+              :coordinates
 
   def initialize(data)
-    @location_id = data["location"]
-    @_daily_weather = daily_weather
+    @id = data[:id]
+    @location_description = data[:location]
+    @coordinates = data[:coordinates]
+    @_daily_weather = nil
     @_upcoming_weather = []
     @_hourly_weather = []
-    @_bing_location_result = bing_location_result
-    @_dark_sky_result = dark_sky_result
   end
 
-  def bing_location_result
-    @_bing_result ||= bing_service.get_location_result
+  def load_all_weather
+    daily_weather
+    hourly_weather
+    upcoming_weather
   end
-
-  def dark_sky_result
-    @_dark_sky_result ||= dark_sky_service.get_weather_forcast
-  end
-
   def daily_weather
-    current_details = dark_sky_result[:currently]
-    day_details = dark_sky_result[:daily][:data].first
+    current_details = dark_sky_results[:currently]
+    day_details = dark_sky_results[:daily][:data].first
 
     @_daily_weather = DailyForecast.new(current_details, day_details)
   end
 
   def hourly_weather
-    dark_sky_result[:hourly][:data].each do |hour|
+    dark_sky_results[:hourly][:data].each do |hour|
       new_hour = HourlyForecast.new(hour)
       @_hourly_weather << new_hour
     end
@@ -34,26 +33,20 @@ class Location
   end
 
   def upcoming_weather
-    dark_sky_result[:daily][:data].each do |day|
+    dark_sky_results[:daily][:data].each do |day|
       new_upcoming_day = UpcomingForecast.new(day)
       @_upcoming_weather << new_upcoming_day
     end
     @_upcoming_weather
   end
 
-  def coordinates
-    bing_location_result[:resourceSets].first[:resources].first[:point][:coordinates]
-  end
-
   private
 
-    def bing_service
-      filter = {location: location_id}
-      BingMapService.new(filter)
+    def dark_sky_service
+      DarkSkyService.new({coordinates: self.coordinates})
     end
 
-    def dark_sky_service
-      filter = {coordinates: coordinates}
-      DarkSkyService.new(filter)
+    def dark_sky_results
+      @dark_sky_results ||= dark_sky_service.get_weather_forcast
     end
 end
