@@ -24,9 +24,9 @@ describe Location, type: :model do
                         ]
     end
 
-    it ".daily_weather" do
-      expect(@location.daily_weather).to be_a DailyForecast
-      expect(@location.daily_weather.current_temp).to eq 49.81
+    it ".daily_forecast" do
+      expect(@location.daily_forecast).to be_a DailyForecast
+      expect(@location.daily_forecast.current_temp).to eq 49.81
     end
 
     it ".hourly_weather" do

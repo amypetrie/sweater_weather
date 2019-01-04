@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       get "/forecast", to: "location#index"
-      get "/gifs", to: "daily_forecast#index"
+      get "/gifs", to: "upcoming_forecast#index"
       resources :users, only: [:new, :create]
     end
   end
