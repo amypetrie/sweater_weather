@@ -15,4 +15,18 @@ class UpcomingForecast
     @time = data[:time]
   end
 
+  def giphy_weather
+    giphy_results
+  end
+
+  private
+    def service
+      filter = {weather: @summary}
+      GiphyService.new(filter)
+    end
+
+    def giphy_results
+      @results ||= service.get_weather_gif
+    end
+
 end
