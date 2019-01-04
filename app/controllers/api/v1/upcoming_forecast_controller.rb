@@ -6,7 +6,7 @@ class Api::V1::UpcomingForecastController < ActionController::API
     upcoming_daily_forecasts = UpcomingForecastSerializer.new(location.upcoming_weather)
     wrapper = UpcomingWeatherWrapper.new(upcoming_weather: upcoming_daily_forecasts)
 
-    render json: wrapper.to_json
+    render status: 201, json: wrapper.to_json
   end
 
   private

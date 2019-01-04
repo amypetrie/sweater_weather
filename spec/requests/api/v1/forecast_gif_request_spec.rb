@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "/api/v1/gifs?location=denver,co" do
 
-  it "returns links to animated GIFs based on the weather for each day for the next 8 days" do
+  it "returns links to animated GIFs based on the weather for each upcoming day" do
 
     stub_request(:get, /dev.virtualearth.net/).
       to_return(body: File.read("./spec/fixtures/bing_map_results.json"))
@@ -17,7 +17,7 @@ describe "/api/v1/gifs?location=denver,co" do
 
     response_back = JSON.parse(response.body, symbolize_names: true)
 
-    expect(response).to be_successful
+    expect(response.status).to eq(201)
 
     expect(response_back).to have_key :daily_forecasts
     expect(response_back).to have_key :copyright

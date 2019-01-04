@@ -17,6 +17,7 @@ class Location
     hourly_weather
     upcoming_weather
   end
+  
   def daily_forecast
     current_details = dark_sky_results[:currently]
     day_details = dark_sky_results[:daily][:data].first
