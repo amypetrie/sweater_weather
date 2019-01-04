@@ -14,7 +14,8 @@ describe "/api/v1/gifs?location=denver,co" do
     expect(response).to be_successful
 
     expect(response_back).to have_key :data
-    expect(response_back[:data]).to have_key :daily_forcasts
-    expect(response_back[:data][:daily_forcasts].first).to have_key :url
+    expect(response_back[:data].first).to have_key :attributes
+    expect(response_back[:data].first[:attributes]).to have_key :summary
+    expect(response_back[:data].first[:attributes]).to have_key :url
   end
 end

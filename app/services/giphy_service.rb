@@ -16,7 +16,8 @@ private
   def conn
     Faraday.new(url: "http://api.giphy.com") do |f|
       f.params['api_key'] = ENV['GIPHY_API_KEY']
-      f.adapater Faraday.default_adapter
+      f.adapter Faraday.default_adapter
+    end
   end
 
   def get_json(uri)

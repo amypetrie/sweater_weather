@@ -27,4 +27,5 @@ describe DailyForecast, type: :model do
     expect(@location.daily_forecast.temperature_high).to eq 50.48
     expect(@location.daily_forecast.temperature_low).to eq 28.58
   end
+
 end

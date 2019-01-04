@@ -15,8 +15,8 @@ class UpcomingForecast
     @time = data[:time]
   end
 
-  def giphy_weather
-    giphy_results
+  def weather_gif
+    giphy_results[:data][:images][:fixed_height_still][:url]
   end
 
   private
