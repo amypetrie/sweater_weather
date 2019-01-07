@@ -7,7 +7,8 @@ Rails.application.routes.draw do
       get "/gifs", to: "upcoming_forecast#index"
       resources :users, only: [:new, :create]
       resources :sessions, only: [:new, :create]
-      resources :favorites, only: [:new, :create, :show]
+      get "/favorites", to: "favorites#show"
+      resources :favorites, only: [:new, :create]
     end
   end
 end

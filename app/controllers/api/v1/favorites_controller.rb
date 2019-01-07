@@ -16,6 +16,7 @@ class Api::V1::FavoritesController < ActionController::API
       user_favorites = FavoriteSerializer.new(user.favorites)
       wrapper = FavoritesWrapper.new(favorites: user_favorites)
       render json: wrapper.to_json
+    end
   end
 
   private
