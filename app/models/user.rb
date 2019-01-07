@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  has_many :favorites
   validates :email, uniqueness: true
 
   has_secure_password validations: false

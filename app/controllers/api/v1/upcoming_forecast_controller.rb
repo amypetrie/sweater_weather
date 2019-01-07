@@ -11,7 +11,7 @@ class Api::V1::UpcomingForecastController < ActionController::API
 
   private
     def location_params
-      params.require("location")
+      params.require(:location)
     end
 
 end
