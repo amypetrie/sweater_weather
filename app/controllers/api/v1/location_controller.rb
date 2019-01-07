@@ -9,7 +9,7 @@ class Api::V1::LocationController < ActionController::API
 
   private
     def location_params
-      params.require("location")
+      params.require(:location)
     end
 
 end
