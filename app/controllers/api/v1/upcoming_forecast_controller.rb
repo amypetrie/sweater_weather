@@ -3,8 +3,8 @@ class Api::V1::UpcomingForecastController < ActionController::API
   def index
     facade = LocationForecastFacade.new(new_location: location_params)
     location_forecast = facade.create_location_forecast
-    upcoming_daily_forecasts = UpcomingForecastSerializer.new(location_forecast.upcoming_weather)
-    wrapper = UpcomingWeatherWrapper.new(upcoming_weather: upcoming_daily_forecasts)
+    upcoming_daily_forecasts = UpcomingForecastSerializer.new(location_forecast.upcoming_forecast)
+    wrapper = UpcomingWeatherWrapper.new(upcoming_forecast: upcoming_daily_forecasts)
 
     render status: 201, json: wrapper.to_json
   end

@@ -29,16 +29,16 @@ describe LocationForecast, type: :model do
       expect(@location_forecast.daily_forecast.current_temp).to eq 49.81
     end
 
-    it ".hourly_weather" do
-      expect(@location_forecast.hourly_weather).to be_an Array
-      expect(@location_forecast.hourly_weather.first).to be_a HourlyForecast
-      expect(@location_forecast.hourly_weather.first.temperature).to eq 49.61
+    it ".hourly_forecast" do
+      expect(@location_forecast.hourly_forecast).to be_an Array
+      expect(@location_forecast.hourly_forecast.first).to be_a HourlyForecast
+      expect(@location_forecast.hourly_forecast.first.temperature).to eq 49.61
     end
 
-    it ".upcoming_weather" do
-      expect(@location_forecast.upcoming_weather).to be_an Array
-      expect(@location_forecast.upcoming_weather.first).to be_an UpcomingForecast
-      expect(@location_forecast.upcoming_weather.first.temperature_high).to eq 50.48
+    it ".upcoming_forecast" do
+      expect(@location_forecast.upcoming_forecast).to be_an Array
+      expect(@location_forecast.upcoming_forecast.first).to be_an UpcomingForecast
+      expect(@location_forecast.upcoming_forecast.first.temperature_high).to eq 50.48
     end
   end
 end

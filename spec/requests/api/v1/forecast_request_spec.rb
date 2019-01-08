@@ -16,8 +16,8 @@ describe "GET /api/v1/forecast?location=denver,co" do
     expect(response_back).to have_key :data
     expect(response_back[:data]).to have_key :attributes
     expect(response_back[:data][:attributes]).to have_key :daily_forecast
-    expect(response_back[:data][:attributes]).to have_key :hourly_weather
-    expect(response_back[:data][:attributes]).to have_key :upcoming_weather
+    expect(response_back[:data][:attributes]).to have_key :hourly_forecast
+    expect(response_back[:data][:attributes]).to have_key :upcoming_forecast
   end
 
 end

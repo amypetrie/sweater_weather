@@ -16,7 +16,7 @@
                 "temperature_high": 55.4,
                 "temperature_low": 26.76
             },
-            "hourly_weather": [
+            "hourly_forecast": [
                 {
                     "temperature": 46.24,
                     "summary": "Clear",
@@ -508,7 +508,7 @@
                     "time": 1546736400
                 }
             ],
-            "upcoming_weather": [
+            "upcoming_forecast": [
                 {
                     "summary": "Clear throughout the day.",
                     "humidity": 0.4,

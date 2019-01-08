@@ -1,4 +1,4 @@
-class Api::V1::LocationController < ActionController::API
+class Api::V1::LocationForecastController < ActionController::API
 
   def index
     facade = LocationForecastFacade.new(new_location: location_params)

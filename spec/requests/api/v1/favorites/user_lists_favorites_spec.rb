@@ -22,8 +22,8 @@ describe "GET /api/v1/favorites" do
     expect(user_response[:data].first[:attributes][:weather_data]).to have_key :data
     expect(user_response[:data].first[:attributes][:weather_data][:data]).to have_key :attributes
     expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :daily_forecast
-    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :hourly_weather
-    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :upcoming_weather 
+    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :hourly_forecast
+    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :upcoming_forecast
   end
 
 end

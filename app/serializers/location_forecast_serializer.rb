@@ -4,10 +4,10 @@ class LocationForecastSerializer
   attribute :daily_forecast do |obj|
     obj.daily_forecast
   end
-  attribute :hourly_weather do |obj|
-    obj.hourly_weather
+  attribute :hourly_forecast do |obj|
+    obj.hourly_forecast
   end
-  attribute :upcoming_weather do |obj|
-    obj.upcoming_weather
+  attribute :upcoming_forecast do |obj|
+    obj.upcoming_forecast
   end
 end
