@@ -17,19 +17,4 @@ describe "Giphy API Service" do
     end
   end
 
-  # it "returns a weather gif" do
-  #   VCR.use_cassette("giphy_weather_api_results") do
-  #
-  #     filter = {weather: "weather"}
-  #     service = GiphyService.new(filter)
-  #
-  #     results = service.get_weather_gif
-  #
-  #     expect(results).to be_a Hash
-  #     expect(results).to have_key :data
-  #     expect(results[:data].first).to have_key :images
-  #     expect(results[:data].first[:images]).to have_key :fixed_height_still
-  #     expect(results[:data].first[:images][:fixed_height_still]).to have_key :url
-  #   end
-  # end
 end

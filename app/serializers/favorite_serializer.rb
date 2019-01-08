@@ -1,12 +1,11 @@
 class FavoriteSerializer
   include FastJsonapi::ObjectSerializer
+  attributes :location
 
-  attribute :location do |obj|
-    obj.daily_forecast
-  end
-
-  attribute :current_weather do |obj|
-    obj.daily_weather
+  attribute :weather_data do |obj|
+    facade = LocationForecastFacade.new(new_location: obj.location)
+    location = facade.create_location_forecast
+    LocationForecastSerializer.new(location)
   end
 
 end

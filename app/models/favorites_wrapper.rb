@@ -1,0 +1,3 @@
+class FavoritesWrapper
+
+end

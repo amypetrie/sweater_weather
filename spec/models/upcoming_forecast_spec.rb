@@ -9,8 +9,8 @@ describe UpcomingForecast, type: :model do
       to_return(body: File.read("./spec/fixtures/random_giphy_result.json"))
 
     place = {:location => "denver,co", :coordinates => [  39.7400093078613,-104.99201965332], :id => "6182059163d844b685219c7657b44a30|CO320968BC|7.7.0.0|Ref A: 9850A83D575D42FAB389B855B41C39F0 Ref B: CO1EDGE0107 Ref C: 2019-01-03T19:06:45Z"}
-    @location = Location.new(place)
-    @forecast = @location.upcoming_weather.first
+    @location_forecast = LocationForecast.new(place)
+    @forecast = @location_forecast.upcoming_weather.first
   end
 
   it "exists" do

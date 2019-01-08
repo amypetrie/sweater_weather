@@ -1,6 +1,6 @@
-class LocationSerializer
+class LocationForecastSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :id
+  attributes :id, :location_description
   attribute :daily_forecast do |obj|
     obj.daily_forecast
   end

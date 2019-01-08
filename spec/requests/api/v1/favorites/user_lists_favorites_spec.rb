@@ -11,11 +11,19 @@ describe "GET /api/v1/favorites" do
 
     get '/api/v1/favorites', :params => params
 
-    user_response = JSON.parse(response.body)
+    user_response = JSON.parse(response.body, symbolize_names: true)
 
     expect(response.status).to eq(200)
-    expect(user_response).to be_an Array
-    expect(user_response.length).to eq 2
+    expect(user_response).to have_key :data
+    expect(user_response[:data]).to be_an Array
+    expect(user_response[:data].length).to eq 2
+    expect(user_response[:data].first).to have_key :attributes
+    expect(user_response[:data].first[:attributes]).to have_key :weather_data
+    expect(user_response[:data].first[:attributes][:weather_data]).to have_key :data
+    expect(user_response[:data].first[:attributes][:weather_data][:data]).to have_key :attributes
+    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :daily_forecast
+    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :hourly_weather
+    expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :upcoming_weather 
   end
 
 end

@@ -1,10 +1,10 @@
 class Api::V1::LocationController < ActionController::API
 
   def index
-    facade = LocationFacade.new(new_location: location_params)
-    location = facade.create_location
+    facade = LocationForecastFacade.new(new_location: location_params)
+    location_forecast = facade.create_location_forecast
 
-    render json: LocationSerializer.new(location)
+    render json: LocationForecastSerializer.new(location_forecast)
   end
 
   private
