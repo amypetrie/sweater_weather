@@ -4,6 +4,6 @@ class UpcomingWeatherWrapper
 
   def initialize(data)
     @copyright = Time.now.strftime('%Y')
-    @daily_forecasts = data[:upcoming_weather]
+    @daily_forecasts = data[:upcoming_forecast]
   end
 end
