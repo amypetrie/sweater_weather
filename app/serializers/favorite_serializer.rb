@@ -3,8 +3,8 @@ class FavoriteSerializer
   attributes :location
 
   attribute :weather_data do |obj|
-    facade = LocationForecastFacade.new(new_location: obj.location)
-    location = facade.create_location_forecast
+   wrapper = LocationForecastWrapper.new(new_location: obj.location)
+    location =wrapper.create_location_forecast
     LocationForecastSerializer.new(location)
   end
 
