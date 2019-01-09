@@ -1,4 +1,4 @@
-class LocationForecastFacade
+class LocationForecastWrapper
   attr_reader :new_location
 
   def initialize(data)
