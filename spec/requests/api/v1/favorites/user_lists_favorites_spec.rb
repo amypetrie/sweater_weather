@@ -26,4 +26,16 @@ describe "GET /api/v1/favorites" do
     expect(user_response[:data].first[:attributes][:weather_data][:data][:attributes]).to have_key :upcoming_forecast
   end
 
+  it "renders 401 without valid API key" do
+    user = create(:user)
+    user.favorites.create(location: "Denver, CO")
+    user.favorites.create(location: "Chicago, IL")
+
+    params = {"api_key" => "12345"}
+
+    get '/api/v1/favorites', :params => params
+
+    expect(response.status).to eq 401
+  end
+
 end

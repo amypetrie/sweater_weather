@@ -14,4 +14,14 @@ describe "POST /api/v1/favorites" do
     expect(user.favorites.first.location).to eq "Denver, CO"
   end
 
+  it "renders 401 without valid API key" do
+    user = create(:user, password: "12345")
+
+    params = {"location" => "Denver, CO", "api_key" => "12345"}
+
+    post '/api/v1/favorites', :params => params
+
+    expect(response.status).to eq(401)
+  end
+
 end
