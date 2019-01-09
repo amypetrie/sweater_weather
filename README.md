@@ -16,17 +16,25 @@ Please review the below instructions to get WeatherBug up and running on your lo
 
 ## Endpoint Explanation
 
+### Public
 `GET /api/v1/forecast?location=denver,co` returns three collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
+
+ `GET /api/v1/gifs?location=denver,co"` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
 
 `POST /api/v1/users` with a JSON body of a valid email, password, and password confirmation (`{"email": "example@example.com", "password": "password", "password_confirmation": "password"}`) creates a user in the database and returns a unique API key for WeatherBug if authentification requirements are met.
 
-`POST /api/v1/sessions` with a JSON body of a valid email and password (`{"email": "example@example.com", "password": "password"}`) creates a user session and returns a unique API key for WeatherBug if authentification requirements are met.
+### User Authorization Required
+`POST /api/v1/sessions` with a JSON body of a valid email and password creates a user session and returns a unique API key for WeatherBug.
 
-`POST /api/v1/favorites` with a JSON body of a valid WeatherBug API key and location (`{"api_key": "64eaf33ff5efbada21351a62517f", "location": "Chicago, IL"}`) creates a favorite location in the database for the user.
+Request body example: `{"email": "example@example.com", "password": "password"}`
 
-`GET /api/v1/favorites` with a JSON body of a valid WeatherBug API key (`{"api_key": "64eaf33ff5efbada21351a62517f"}`) returns a collection of a user's favorite locations, each with corresponding collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
+`POST /api/v1/favorites` with a JSON body of a valid WeatherBug API key and location creates a favorite location in the database for the user.
 
- `GET /api/v1/gifs?location=denver,co"` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
+Request body example: `{"api_key": "64eaf33ff5efbada21351a62517f", "location": "Chicago, IL"}`
+
+`GET /api/v1/favorites` with a JSON body of a valid WeatherBug API key returns a collection of a user's favorite locations, each with corresponding collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
+
+Request body example: `{"api_key": "64eaf33ff5efbada21351a62517f"}`
 
 ## Prerequisites 
 
