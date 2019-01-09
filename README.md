@@ -18,33 +18,33 @@ Please review the below instructions to get WeatherBug up and running on your lo
 
 ## Prerequisites 
 
-Ruby v. 2.4
-Rails v. 5.2
-Puma v. 3.7
-PG v. 1.1.3
+* Ruby v. 2.4
+* Rails v. 5.2
+* Puma v. 3.7
+* PG v. 1.1.3
 
 ## Testing Dependencies
 
-Rspec-Rails
-Capybara
-Factory_bot_rails
-Webmock
-VCR
-Faraday
+* Rspec-Rails
+* Capybara
+* Factory_bot_rails
+* Webmock
+* VCR
+* Faraday
 
 ## APIs Consumed (keys required)
 
-Bing Maps
-DarkSky
-Giphy
+* Bing Maps
+* DarkSky
+* Giphy
 
 ## Additional Gems
 
-Bcrypt
-Fast_jsonapi
-Shoulda-matchers
-Database_cleaner
-Figaro
+* Bcrypt
+* Fast_jsonapi
+* Shoulda-matchers
+* Database_cleaner
+* Figaro
 
 ## Installation
 Clone down this repository, change into the root directory and run:
