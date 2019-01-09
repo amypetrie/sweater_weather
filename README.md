@@ -18,8 +18,10 @@ Please review the below instructions to get WeatherBug up and running on your lo
 
 All WeatherBug API requests must have the following headers:
 
-```Content-Type: application/json```
-```Accept: application/json```
+```
+Content-Type: application/json
+Accept: application/json
+```
 
 ### Public
 * `GET /api/v1/forecast?location=denver,co` returns three collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
