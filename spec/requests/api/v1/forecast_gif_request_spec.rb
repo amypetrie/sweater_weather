@@ -10,8 +10,6 @@ describe "/api/v1/gifs?location=denver,co" do
     stub_request(:get, /api.darksky.net/).
       to_return(body: File.read("./spec/fixtures/dark_sky_results.json"))
 
-    stub_request(:get, /api.giphy.com/).
-      to_return(body: File.read("./spec/fixtures/random_giphy_result.json"))
 
     get '/api/v1/gifs?location=denver,co'
 
@@ -25,6 +23,6 @@ describe "/api/v1/gifs?location=denver,co" do
     expect(response_back[:daily_forecasts][:data].first[:attributes]).to have_key :summary
     expect(response_back[:daily_forecasts][:data].first[:attributes][:summary]).to eq "Clear throughout the day."
     expect(response_back[:daily_forecasts][:data].first[:attributes]).to have_key :url
-    expect(response_back[:daily_forecasts][:data].first[:attributes][:url]).to eq "https://media2.giphy.com/media/xUNd9W0kPQknKh6V56/200_s.gif"
+    expect(response_back[:daily_forecasts][:data].first[:attributes][:url]).to be_a String
   end
 end

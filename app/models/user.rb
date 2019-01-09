@@ -3,7 +3,6 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   validates_presence_of :password_digest
 
-
   has_secure_password validations: true
 
   before_create do
