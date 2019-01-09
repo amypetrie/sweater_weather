@@ -17,25 +17,21 @@ Please review the below instructions to get WeatherBug up and running on your lo
 ## Endpoint Explanation
 
 ### Public
-`GET /api/v1/forecast?location=denver,co` returns three collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
+* `GET /api/v1/forecast?location=denver,co` returns three collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
 
- `GET /api/v1/gifs?location=denver,co"` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
+* `GET /api/v1/gifs?location=denver,co"` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
 
-`POST /api/v1/users` with a JSON body of a valid email, password, and password confirmation creates a user in the database and returns a unique API key for WeatherBug if authentification requirements are met.
-
+* `POST /api/v1/users` with a JSON body of a valid email, password, and password confirmation creates a user in the database and returns a unique API key for WeatherBug if authentification requirements are met.
 **Request body example:** `{"email": "example@example.com", "password": "password", "password_confirmation": "password"}`
 
 ### User Authorization Required
-`POST /api/v1/sessions` with a JSON body of a valid email and password creates a user session and returns a unique API key for WeatherBug.
-
+* `POST /api/v1/sessions` with a JSON body of a valid email and password creates a user session and returns a unique API key for WeatherBug.
 **Request body example:** `{"email": "example@example.com", "password": "password"}`
 
-`POST /api/v1/favorites` with a JSON body of a valid WeatherBug API key and location creates a favorite location in the database for the user.
-
+* `POST /api/v1/favorites` with a JSON body of a valid WeatherBug API key and location creates a favorite location in the database for the user.
 **Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f", "location": "Chicago, IL"}`
 
-`GET /api/v1/favorites` with a JSON body of a valid WeatherBug API key returns a collection of a user's favorite locations, each with corresponding collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
-
+* `GET /api/v1/favorites` with a JSON body of a valid WeatherBug API key returns a collection of a user's favorite locations, each with corresponding collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
 **Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f"}`
 
 ## Prerequisites 
