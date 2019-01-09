@@ -52,6 +52,12 @@ Accept: application/json
 * Puma v. 3.7
 * PG v. 1.1.3
 
+## APIs Consumed (keys required)
+
+* [Bing Maps](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/)
+* [DarkSky](https://darksky.net/dev)
+* [Giphy](https://developers.giphy.com/)
+
 ## Testing Dependencies
 
 * Rspec-Rails
@@ -60,12 +66,6 @@ Accept: application/json
 * Webmock
 * VCR
 * Faraday
-
-## APIs Consumed (keys required)
-
-* Bing Maps
-* DarkSky
-* Giphy
 
 ## Additional Gems
 
