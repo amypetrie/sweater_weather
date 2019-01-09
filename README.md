@@ -54,10 +54,11 @@ Clone down this repository, change into the root directory and run:
 To setup the database necessary for this API, run the following commands:
 
 `bundle exec rake db:create`
+
 `bundle exec rake db:migrate`
 
 ## Running the Test Suite
 
 Run `bundle exec rspec` to run the full test suite.
 
-Run `bundle exec rspec <TEST PATH>` to run a specific test
+Run `bundle exec rspec <TEST FILE PATH>` to run a specific test
