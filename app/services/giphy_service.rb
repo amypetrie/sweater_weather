@@ -10,11 +10,12 @@ class GiphyService
 
   def get_weather_gif
     input = parse_string_for_request(@filter[:weather])
+
     get_json("/v1/gifs/search?&q=#{input}")
   end
 
   def parse_string_for_request(string)
-    string.gsub(/([ ])/, '+')
+    string.gsub(/\(.*\)/, "").gsub(/([ ])/, '+')
   end
 
 private
