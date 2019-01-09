@@ -35,15 +35,15 @@ Accept: application/json
 ### User Authorization Required
 * `POST /api/v1/sessions` with a JSON body of a valid email and password creates a user session and returns a unique API key for WeatherBug.
 
-**Request body example:** `{"email": "example@example.com", "password": "password"}`
+   **Request body example:** `{"email": "example@example.com", "password": "password"}`
 
 * `POST /api/v1/favorites` with a JSON body of a valid WeatherBug API key and location creates a favorite location in the database for the user.
 
-**Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f", "location": "Chicago, IL"}`
+   **Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f", "location": "Chicago, IL"}`
 
 * `GET /api/v1/favorites` with a JSON body of a valid WeatherBug API key returns a collection of a user's favorite locations, each with corresponding collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
 
-**Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f"}`
+   **Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f"}`
 
 ## Prerequisites 
 
