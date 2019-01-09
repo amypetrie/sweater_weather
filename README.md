@@ -6,13 +6,13 @@ Please review the below instructions to get WeatherBug up and running on your lo
 
 ## Table of Contents
 
-Endpoint Explanation
-Prerequisites
-Testing Dependencies
-APIs consumed (keys required)
-Additional Gems
-Installation
-Running the Test Suite
+⋅⋅* Endpoint Explanation
+⋅⋅* Prerequisites
+⋅⋅* Testing Dependencies
+⋅⋅* APIs consumed (keys required)
+⋅⋅* Additional Gems
+⋅⋅* Installation
+⋅⋅* Running the Test Suite
 
 ## Endpoint Explanation
 
