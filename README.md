@@ -30,7 +30,7 @@ Accept: application/json
 
 * `POST /api/v1/users` with a JSON body of a valid email, password, and password confirmation creates a user in the database and returns a unique API key for WeatherBug if authentification requirements are met.
 
-**Request body example:** `{"email": "example@example.com", "password": "password", "password_confirmation": "password"}`
+   **Request body example:** `{"email": "example@example.com", "password": "password", "password_confirmation": "password"}`
 
 ### User Authorization Required
 * `POST /api/v1/sessions` with a JSON body of a valid email and password creates a user session and returns a unique API key for WeatherBug.
