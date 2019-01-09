@@ -1,24 +1,63 @@
-# README
+# WeatherBug
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+WeatherBug is a RESTful API built in Rails 5.2 that retrieves and sends collections of current and future weather data based on a city/state/landmark location, consuming APIs from Bing Maps, DarkSky, and Giphy.
 
-Things you may want to cover:
+Please review the below instructions to get WeatherBug up and running on your local machine for development and testing purposes.
 
-* Ruby version
+## Table of Contents
 
-* System dependencies
+Endpoint Explanation
+Prerequisites
+Testing Dependencies
+APIs consumed (keys required)
+Additional Gems
+Installation
+Running the Test Suite
 
-* Configuration
+## Endpoint Explanation
 
-* Database creation
+## Prerequisites 
 
-* Database initialization
+Ruby v. 2.4
+Rails v. 5.2
+Puma v. 3.7
+PG v. 1.1.3
 
-* How to run the test suite
+## Testing Dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+Rspec-Rails
+Capybara
+Factory_bot_rails
+Webmock
+VCR
+Faraday
 
-* Deployment instructions
+## APIs Consumed (keys required)
 
-* ...
+Bing Maps
+DarkSky
+Giphy
+
+## Additional Gems
+
+Bcrypt
+Fast_jsonapi
+Shoulda-matchers
+Database_cleaner
+Figaro
+
+## Installation
+Clone down this repository, change into the root directory and run:
+
+`bundle`
+
+To setup the database necessary for this API, run the following commands:
+
+`bundle exec rake db:create`
+`bundle exec rake db:migrate`
+
+## Running the Test Suite
+
+Run `bundle exec rspec` to run the full test suite.
+
+Run `bundle exec rspec <TEST PATH>` to run a specific test
