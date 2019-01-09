@@ -26,7 +26,7 @@ Accept: application/json
 ### Public
 * `GET /api/v1/forecast?location=denver,co` returns three collections of weather forecast objects with data representing the location's daily, hourly, and upcoming daily weather.
 
-* `GET /api/v1/gifs?location=denver,co"` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
+* `GET /api/v1/gifs?location=denver,co` returns a collection of upcoming daily weather forecast objects with a gif URL that corresponds to each day's weather description.
 
 * `POST /api/v1/users` with a JSON body of a valid email, password, and password confirmation creates a user in the database and returns a unique API key for WeatherBug if authentification requirements are met.
 
