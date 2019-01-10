@@ -54,11 +54,12 @@ Accept: application/json
 * Puma v. 3.7
 * PG v. 1.1.3
 
-## APIs Consumed (keys required)
+## APIs Consumed (keys required) / External Services
 
 * [Bing Maps](https://docs.microsoft.com/en-us/bingmaps/rest-services/locations/)
 * [DarkSky](https://darksky.net/dev)
 * [Giphy](https://developers.giphy.com/)
+* [Google OAuth](https://developers.google.com/identity/protocols/OAuth2WebServer)
 
 ## Testing Dependencies
 
