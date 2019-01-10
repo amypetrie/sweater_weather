@@ -4,7 +4,7 @@ WeatherBug is a RESTful API built in Rails 5.2 that retrieves and sends collecti
 
 Please review the below instructions to get WeatherBug up and running on your local machine for development and testing purposes.
 
-WeatherBug is deployed at [https://weather-bug.herokuapp.com/]
+WeatherBug is deployed at https://weather-bug.herokuapp.com/
 
 ## Table of Contents
 
