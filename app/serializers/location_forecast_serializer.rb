@@ -10,4 +10,7 @@ class LocationForecastSerializer
   attribute :upcoming_forecast do |obj|
     obj.upcoming_forecast
   end
+  attribute :time do |obj|
+    Time.now
+  end
 end

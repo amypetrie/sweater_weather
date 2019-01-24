@@ -8,7 +8,8 @@ class DailyForecast
               :visibility,
               :uv_index,
               :temperature_high,
-              :temperature_low
+              :temperature_low,
+              :time
 
   def initialize(current_details, day_details)
     @daily_summary = day_details[:summary]
@@ -21,6 +22,7 @@ class DailyForecast
     @uv_index= current_details[:uvIndex]
     @temperature_high = day_details[:temperatureHigh]
     @temperature_low = day_details[:temperatureLow]
+    @time = Time.now
   end
 
 end
