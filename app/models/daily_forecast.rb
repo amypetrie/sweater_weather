@@ -22,7 +22,7 @@ class DailyForecast
     @uv_index= current_details[:uvIndex]
     @temperature_high = day_details[:temperatureHigh]
     @temperature_low = day_details[:temperatureLow]
-    @time = Time.now
+    @time = day_details[:time]
   end
 
 end
