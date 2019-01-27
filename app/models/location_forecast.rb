@@ -1,8 +1,7 @@
 class LocationForecast
   attr_reader :id,
               :location_description,
-              :coordinates,
-              :current_time
+              :coordinates
 
   def initialize(data)
     @id = data[:id]
