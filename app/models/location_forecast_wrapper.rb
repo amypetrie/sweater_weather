@@ -6,7 +6,7 @@ class LocationForecastWrapper
   end
 
   def create_location_forecast
-    location_data = {coordinates: find_coordinates, location: find_full_location, id: id_for_location_forecast}
+    location_data = {coordinates: find_coordinates, location: find_full_location, id: id_for_location_forecast, timezone: find_timezone}
     location_forecast = LocationForecast.new(location_data)
     location_forecast.load_all_weather
     location_forecast
@@ -14,6 +14,9 @@ class LocationForecastWrapper
 
   def find_coordinates
     bing_results[:resourceSets].first[:resources].first[:point][:coordinates]
+  end
+
+  def find_timezone
   end
 
   def find_full_location

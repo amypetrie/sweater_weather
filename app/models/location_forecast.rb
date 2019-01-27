@@ -1,21 +1,36 @@
 class LocationForecast
   attr_reader :id,
               :location_description,
-              :coordinates
+              :coordinates,
+              :current_time
 
   def initialize(data)
     @id = data[:id]
     @location_description = data[:location]
     @coordinates = data[:coordinates]
+    @_current_time = nil
     @_daily_forecast = nil
     @_upcoming_forecast = []
     @_hourly_forecast = []
+    @_timezone = nil
   end
 
   def load_all_weather
     daily_forecast
     hourly_forecast
     upcoming_forecast
+  end
+
+  def timezone
+    timezone = dark_sky_results[:timezone]
+
+    @_timezone = timezone
+  end
+
+  def current_time
+    curr_time = dark_sky_results[:currently][:time]
+
+    @_current_time = curr_time
   end
 
   def daily_forecast
