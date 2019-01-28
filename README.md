@@ -1,10 +1,14 @@
-# WeatherBug
+# WeatherBug (Back-End)
 
 WeatherBug is a RESTful API built in Rails 5.2 that retrieves and sends collections of current and future weather data based on a city/state/landmark location, consuming APIs from Bing Maps, DarkSky, and Giphy.
 
 Please review the below instructions to get WeatherBug up and running on your local machine for development and testing purposes.
 
-WeatherBug is deployed at https://weather-bug.herokuapp.com/
+WeatherBug's back-end is deployed at https://weather-bug.herokuapp.com/
+
+Additionally,
+
+WeatherBug's front-end is deployed at https://amypetrie.github.io/weather_bug_frontend/, and the GitHub repo is located at https://github.com/amypetrie/weather_bug_frontend.
 
 ## Table of Contents
 
@@ -47,7 +51,7 @@ Accept: application/json
 
    **Request body example:** `{"api_key": "64eaf33ff5efbada21351a62517f"}`
 
-## Prerequisites 
+## Prerequisites
 
 * Ruby v. 2.4
 * Rails v. 5.2
